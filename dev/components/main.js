@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import Cake from './cake'
-import CakeForm from './cakeForm'
 
 class Main extends React.Component{
 
