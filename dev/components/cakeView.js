@@ -26,7 +26,6 @@ class cakeView extends React.Component {
                     <li>Comment: {cake.comment}</li>
                     <li>Yum Factor: {cake.yumFactor}</li>
                 </ul>
-                <button onClick={this.props.removeCake.bind(null, cake.id)} className="cake__button cake__button--delete">delete</button>
             </div>
         );
     }

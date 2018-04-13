@@ -9,7 +9,10 @@ class Cake extends React.Component{
                 <Link to={`/cake/${cake.id}`}>
                     <h3>{cake.name} </h3>
                 </Link>
-                <img src={cake.imageUrl} alt={cake.name}/>               
+                <img src={cake.imageUrl} alt={cake.name}/>
+                <div>
+                    <button onClick={this.props.removeCake.bind(null, cake.id)} className="cake__button cake__button--delete">delete</button>               
+                </div>
             </div>
         )
     }

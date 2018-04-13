@@ -27,7 +27,7 @@ function cakes(state = [], action){
             if(deleted){
                 newState = newState.filter(cake => cake.id !== action.id)
             }            
-            
+
             return newState  
             
         case 'ADD_CAKE':
@@ -55,16 +55,10 @@ function cakes(state = [], action){
             )
             .then(function(response, newstate){
                 console.log(response)
-                if(response.ok){                   
-                    history.push('/')
-
-                    return true;
+                if(response.ok){                 
+                    newState.push(newCake)
                 }                            
-            }) 
-            
-            if(created){
-                newState.push(newCake)
-            }
+            })
 
             return newState
         
