@@ -56,15 +56,9 @@ function cakes(state = [], action){
             .then(function(response, newstate){
                 console.log(response)
                 if(response.ok){                   
-                    history.push('/')
-
-                    return true;
+                    newState.push(newCake)
                 }                            
-            }) 
-            
-            if(created){
-                newState.push(newCake)
-            }
+            })
 
             return newState
 
