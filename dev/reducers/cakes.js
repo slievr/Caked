@@ -67,6 +67,30 @@ function cakes(state = [], action){
             }
 
             return newState
+        
+        case 'GET_CAKE':
+
+            let found = fetch(
+                'http://ec2-52-209-201-89.eu-west-1.compute.amazonaws.com:5000/api/cakes/'+action.id,
+                {
+                    method: 'GET'
+                }                
+            )
+            .then(function(response, newstate){
+                if(response.ok){                   
+                    return response;
+                }                
+            })      
+
+            if(found.ok){
+                const i = newState.findIndex((cake) => cake.id === action.id)
+                
+                // api request doesn't return body so unable to update store with up to date data
+                //let newCake = {}
+                //newState = newState.splice(i,1,)
+            }            
+
+            return newState;
 
         default:
             return state

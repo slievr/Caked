@@ -6,15 +6,10 @@ class Cake extends React.Component{
         let { cake, i } = this.props 
         return(
             <div className="cake">
-                <h3>{cake.name}</h3>
-                <img src={cake.imageUrl} alt={cake.name}/>
-                <ul>
-                    <li>{cake.id}</li>
-                    <li>{cake.comment}</li>
-                    <li>{cake.yumFactor}</li>
-                </ul>
-                <button className="cake__button cake_button--edit">update</button>
-                <button onClick={this.props.removeCake.bind(null, cake.id)} className="cake__button cake__button--delete">delete</button>
+                <Link to={`/cake/${cake.id}`}>
+                    <h3>{cake.name} </h3>
+                </Link>
+                <img src={cake.imageUrl} alt={cake.name}/>               
             </div>
         )
     }
