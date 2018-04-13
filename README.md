@@ -14,7 +14,7 @@ cordova:
 npm install -g cordova
 cordova platform add browser
 ```
-
+Caked:
 ```javascript
 npm install 
 npm run build
