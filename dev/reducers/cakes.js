@@ -30,7 +30,44 @@ function cakes(state = [], action){
             
             return newState  
             
-        
+        case 'ADD_CAKE':
+            
+            console.log(action)
+
+            let newCake = {
+                id: action.id,
+                name: action.name,
+                comment: action.comment,
+                imageUrl: action.imageUrl,
+                yumFactor: action.yumFactor
+            }
+
+            let created = fetch(
+                'http://ec2-52-209-201-89.eu-west-1.compute.amazonaws.com:5000/api/cakes/',
+                {
+                    method: 'POST',
+                    headers: {
+                        'user-agent': 'Mozilla/4.0 MDN Example',
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(newCake)
+                }                
+            )
+            .then(function(response, newstate){
+                console.log(response)
+                if(response.ok){                   
+                    history.push('/')
+
+                    return true;
+                }                            
+            }) 
+            
+            if(created){
+                newState.push(newCake)
+            }
+
+            return newState
+
         default:
             return state
 

@@ -9,6 +9,7 @@ import fetch from 'cross-fetch'
 
 import App from './components/app'
 import Cake from './components/cake'
+import CakeForm from './components/cakeForm'
 
 import { store, history } from './store'
 
@@ -28,6 +29,7 @@ const router = (
     <ConnectedRouter history={history}>
       <div>
         <Route exact path="/" component={App}/>
+        <Route path="/add-cake" component={CakeForm}/>
         <Route path="/cake/:cakeId" component={Cake}/>
       </div>
     </ConnectedRouter>
